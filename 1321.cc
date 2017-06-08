@@ -10,7 +10,7 @@ int a[maxn][maxn];
 bool used[maxn];
 
 int n, k, ans;
-void dfs(int i, int num) {
+void dfs(int i, int num) { // i代表坐标x,num已摆放的棋子数
   if (num == k) {
     ans++;
     return;
@@ -24,7 +24,7 @@ void dfs(int i, int num) {
       used[j] = false;
     }
   }
-  dfs(i + 1, num);
+  dfs(i + 1, num); //不选此棋子，即使此棋子满足要求，因为由k<n的情况
 }
 int main() {
   while (scanf("%d%d", &n, &k) > 0 && n != -1 && k != -1) {
